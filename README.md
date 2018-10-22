@@ -4,7 +4,7 @@ This is a sandbox project for playing around with kafka capabilities.
 
 ## How to run it
 
-Start zookeeper and kafka.
+Start zookeeper and kafka & using kotlin apps for producing and consuming messages.
 
 1. install docker
 2. run ```docker-compose up``` in terminal

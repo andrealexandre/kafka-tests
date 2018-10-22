@@ -1,21 +1,22 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.71'
 }
+repositories {
+    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenCentral()
+}
 
 compileKotlin { kotlinOptions { jvmTarget = "1.8" } }
 compileTestKotlin { kotlinOptions { jvmTarget = "1.8" } }
 
 group = 'org.tests'
 version = '1.0-SNAPSHOT'
-
 description = "Experiments with Kafka"
 
-repositories {
-    maven { url "http://repo.maven.apache.org/maven2" }
-    mavenCentral()
-}
+ext.kafka_version='2.0.0'
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    compile "org.apache.kafka:kafka-clients:2.0.0"
+    compile "org.apache.kafka:kafka-clients:$kafka_version"
+    compile "org.apache.kafka:kafka-streams:$kafka_version"
 }
